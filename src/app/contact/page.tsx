@@ -17,20 +17,20 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "(555) 123-WRAP",
-    link: "tel:5551239727",
+    content: "(501) 945-9727",
+    link: "tel:5019459727",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@rollnwrapz.com",
-    link: "mailto:info@rollnwrapz.com",
+    content: "admin@rollnwrapz.com",
+    link: "mailto:admin@rollnwrapz.com",
   },
   {
     icon: MapPin,
     title: "Location",
-    content: "123 Wrap Street, City, ST 12345",
-    link: "#",
+    content: "4420 East 43rd Street, North Little Rock, AR 72117",
+    link: "https://www.google.com/maps/search/?api=1&query=4420+East+43rd+Street+North+Little+Rock+AR+72117",
   },
   {
     icon: Clock,
@@ -322,21 +322,25 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Map Placeholder */}
-            <motion.div
+            {/* Map Link */}
+            <motion.a
+              href="https://www.google.com/maps/search/?api=1&query=4420+East+43rd+Street+North+Little+Rock+AR+72117"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
-              className="h-64 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-2xl flex items-center justify-center"
+              whileHover={{ scale: 1.02 }}
+              className="block h-64 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-2xl flex items-center justify-center hover:border-[#8dc63f]/50 transition-all cursor-pointer"
             >
               <div className="text-center">
                 <MapPin size={48} className="mx-auto mb-4 text-[#8dc63f]" />
-                <p className="text-white/60">Map View</p>
+                <p className="text-white/60">Open in Google Maps</p>
                 <p className="text-white/40 text-sm">
-                  123 Wrap Street, City, ST 12345
+                  4420 East 43rd Street, North Little Rock, AR 72117
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           </motion.div>
         </div>
       </div>

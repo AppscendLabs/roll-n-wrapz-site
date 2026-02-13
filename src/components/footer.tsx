@@ -52,15 +52,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 text-white/60 text-sm">
                 <Phone size={16} />
-                <span>(555) 123-WRAP</span>
+                <span>(501) 945-9727</span>
               </li>
               <li className="flex items-center space-x-3 text-white/60 text-sm">
                 <Mail size={16} />
-                <span>info@rollnwrapz.com</span>
+                <span>admin@rollnwrapz.com</span>
               </li>
               <li className="flex items-center space-x-3 text-white/60 text-sm">
                 <MapPin size={16} />
-                <span>123 Wrap St, City, ST 12345</span>
+                <span>4420 E 43rd St, North Little Rock, AR 72117</span>
               </li>
             </ul>
           </div>
