@@ -52,10 +52,10 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 className="flex flex-col leading-none"
               >
-                <span className="text-2xl md:text-3xl font-black tracking-tighter text-white">
+                <span className="text-3xl md:text-4xl font-display tracking-tight text-white leading-[0.85]">
                   ROLL&apos;N
                 </span>
-                <span className="text-2xl md:text-3xl font-black tracking-tighter bg-gradient-to-r from-[#8dc63f] to-[#7ab835] bg-clip-text text-transparent">
+                <span className="text-3xl md:text-4xl font-display tracking-tight bg-gradient-to-r from-[#8dc63f] to-[#7ab835] bg-clip-text text-transparent leading-[0.85]">
                   WRAPZ
                 </span>
               </motion.div>

@@ -89,10 +89,10 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
             GET IN <span className="text-[#8dc63f]">TOUCH</span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light">
             Ready to transform your vehicle? Reach out for a free consultation
             and quote.
           </p>

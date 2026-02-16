@@ -135,13 +135,13 @@ export default function ServicesPage() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
             OUR <span className="text-[#8dc63f]">SERVICES</span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl">
+          <p className="text-white/50 text-lg md:text-xl font-light">
             From complete transformations to subtle accents, we offer premium
             wrapping services tailored to your vision.
           </p>
@@ -149,8 +149,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 mb-32 grain overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -211,10 +211,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-7xl tracking-tight mb-4">
             AVAILABLE <span className="text-[#8dc63f]">FINISHES</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-light">
             Choose from a wide variety of finishes to match your style
           </p>
         </motion.div>
@@ -251,10 +251,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-7xl tracking-tight mb-4">
             OUR <span className="text-[#8dc63f]">PROCESS</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-light">
             From concept to completion, we ensure a seamless experience
           </p>
         </motion.div>
@@ -270,7 +270,7 @@ export default function ServicesPage() {
               className="flex gap-6 mb-12 last:mb-0"
             >
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-full bg-[#8dc63f] flex items-center justify-center font-black text-xl text-black">
+                <div className="w-16 h-16 rounded-full bg-[#8dc63f] flex items-center justify-center font-display text-xl text-black">
                   {item.step}
                 </div>
               </div>
@@ -293,7 +293,7 @@ export default function ServicesPage() {
           className="bg-[#8dc63f] rounded-3xl p-12 md:p-16 text-center"
         >
           <Clock size={48} className="mx-auto mb-6 text-black" />
-          <h2 className="text-3xl md:text-4xl font-black mb-4 text-black">
+          <h2 className="text-3xl md:text-4xl font-display mb-4 text-black">
             READY TO GET STARTED?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-black/80">

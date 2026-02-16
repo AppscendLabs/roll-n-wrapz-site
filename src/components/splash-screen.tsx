@@ -9,7 +9,7 @@ export function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2000);
+    }, 2200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -18,35 +18,48 @@ export function SplashScreen() {
       {showSplash && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden"
         >
+          {/* Background glow */}
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+            className="absolute w-[600px] h-[600px] rounded-full bg-[#8dc63f]/5 blur-[120px]"
+          />
+
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center relative z-10"
           >
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col leading-none"
-            >
-              <span className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-2">
+            <motion.div className="flex flex-col leading-none">
+              <motion.span
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="text-6xl md:text-7xl lg:text-9xl font-display tracking-tight text-white leading-[0.85]"
+              >
                 ROLL&apos;N
-              </span>
-              <span className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter bg-gradient-to-r from-[#8dc63f] to-[#7ab835] bg-clip-text text-transparent animate-gradient">
+              </motion.span>
+              <motion.span
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="text-6xl md:text-7xl lg:text-9xl font-display tracking-tight bg-gradient-to-r from-[#8dc63f] via-[#a4e04f] to-[#7ab835] bg-clip-text text-transparent leading-[0.85]"
+              >
                 WRAPZ
-              </span>
+              </motion.span>
             </motion.div>
 
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-              className="h-1 bg-[#8dc63f] rounded-full mt-8 max-w-xs mx-auto"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="h-0.5 bg-gradient-to-r from-transparent via-[#8dc63f] to-transparent mt-6 max-w-xs mx-auto origin-center"
             />
           </motion.div>
         </motion.div>

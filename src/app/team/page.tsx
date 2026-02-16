@@ -75,10 +75,10 @@ export default function TeamPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
             MEET THE <span className="text-[#8dc63f]">TEAM</span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl">
+          <p className="text-white/50 text-lg md:text-xl font-light">
             Our passionate team of experts brings years of experience and
             dedication to every wrap.
           </p>
@@ -124,7 +124,7 @@ export default function TeamPage() {
                   {/* Name Badge */}
                   <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 z-20">
                     <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                      <h3 className="text-xl md:text-2xl font-black mb-1">
+                      <h3 className="text-xl md:text-2xl font-display mb-1">
                         {member.name}
                       </h3>
                       <p className="text-[#8dc63f] font-medium text-sm md:text-base">
@@ -144,7 +144,7 @@ export default function TeamPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <div className="mb-6">
-                    <h3 className="text-3xl md:text-4xl font-black mb-2">
+                    <h3 className="text-3xl md:text-4xl font-display mb-2">
                       {member.name}
                     </h3>
                     <p className="text-xl text-[#8dc63f] font-medium">
@@ -188,7 +188,7 @@ export default function TeamPage() {
           transition={{ duration: 0.8 }}
           className="bg-[#8dc63f] rounded-3xl p-12 md:p-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-black mb-4 text-black">
+          <h2 className="text-3xl md:text-4xl font-display mb-4 text-black">
             READY TO WORK WITH THE BEST?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-black/80">

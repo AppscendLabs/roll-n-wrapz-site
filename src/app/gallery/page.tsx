@@ -103,10 +103,10 @@ export default function GalleryPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
             OUR <span className="text-[#8dc63f]">GALLERY</span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light">
             Explore our portfolio of stunning vehicle transformations
           </p>
         </motion.div>

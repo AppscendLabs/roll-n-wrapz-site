@@ -8,10 +8,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex flex-col leading-none mb-4">
-              <span className="text-2xl font-black tracking-tighter text-white">
+              <span className="text-3xl font-display tracking-tight text-white leading-[0.85]">
                 ROLL&apos;N
               </span>
-              <span className="text-2xl font-black tracking-tighter bg-gradient-to-r from-[#8dc63f] to-[#7ab835] bg-clip-text text-transparent">
+              <span className="text-3xl font-display tracking-tight bg-gradient-to-r from-[#8dc63f] to-[#7ab835] bg-clip-text text-transparent leading-[0.85]">
                 WRAPZ
               </span>
             </div>
@@ -50,17 +50,23 @@ export function Footer() {
               Contact
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center space-x-3 text-white/60 text-sm">
-                <Phone size={16} />
-                <span>(501) 945-9727</span>
+              <li>
+                <a href="tel:5019459727" className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <Phone size={16} className="flex-shrink-0" />
+                  <span>(501) 945-9727</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-3 text-white/60 text-sm">
-                <Mail size={16} />
-                <span>admin@rollnwrapz.com</span>
+              <li>
+                <a href="mailto:admin@rollnwrapz.com" className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <Mail size={16} className="flex-shrink-0" />
+                  <span>admin@rollnwrapz.com</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-3 text-white/60 text-sm">
-                <MapPin size={16} />
-                <span>4420 E 43rd St, North Little Rock, AR 72117</span>
+              <li>
+                <a href="https://www.google.com/maps/search/?api=1&query=4420+East+43rd+Street+North+Little+Rock+AR+72117" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <MapPin size={16} className="flex-shrink-0" />
+                  <span>4420 E 43rd St, North Little Rock, AR 72117</span>
+                </a>
               </li>
             </ul>
           </div>
