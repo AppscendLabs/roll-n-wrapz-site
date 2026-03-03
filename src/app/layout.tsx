@@ -21,12 +21,12 @@ const anton = Anton({
 export const metadata: Metadata = {
   title: "ROLL'N WRAPZ | Premium Vehicle Wrapping",
   description:
-    "Premium vehicle wrapping that turns heads and protects your investment. Full wraps, partial wraps, paint protection film, and chrome delete services.",
+    "Premium vehicle wrapping that turns heads and protects your investment. Full wraps, partial wraps, vinyl wraps, and chrome delete services.",
   keywords: [
     "vehicle wrap",
     "car wrap",
     "vinyl wrap",
-    "paint protection",
+
     "chrome delete",
     "matte wrap",
   ],

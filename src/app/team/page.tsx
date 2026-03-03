@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
-import { Award, Wrench, Palette, Shield } from "lucide-react";
+import { Award, Wrench, Palette } from "lucide-react";
 
 const teamMembers = [
   {
@@ -42,25 +42,10 @@ const teamMembers = [
     bio: "Devon's precision and speed make him one of the most sought-after wrap technicians in the region. With 10+ years of hands-on experience, he's wrapped everything from everyday commuters to exotic supercars. His calm demeanor and methodical approach ensure every wrap is installed flawlessly. Devon is certified in multiple vinyl brands and stays current with the latest installation techniques.",
     specialties: [
       "Luxury Vehicles",
-      "Paint Protection Film",
       "Matte Finishes",
       "Racing Stripes",
     ],
     icon: Wrench,
-  },
-  {
-    name: "Alex Thompson",
-    role: "Paint Protection Specialist",
-    image:
-      "https://images.unsplash.com/photo-1588610846596-4df43c0fbdc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvbW90aXZlJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcwOTU2NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    bio: "Alex is our go-to expert for paint protection film (PPF) installations. With a background in automotive detailing and ceramic coatings, Alex understands how to preserve a vehicle's finish better than anyone. His meticulous prep work and flawless application techniques have protected thousands of vehicles from chips, scratches, and environmental damage. Clients trust Alex to keep their investments looking showroom-fresh.",
-    specialties: [
-      "PPF Installation",
-      "Ceramic Coating",
-      "Surface Preparation",
-      "Clear Bra",
-    ],
-    icon: Shield,
   },
 ];
 

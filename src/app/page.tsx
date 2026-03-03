@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Sparkles, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Sparkles, Clock, Award } from "lucide-react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 
 const portfolioItems = [
@@ -39,12 +39,6 @@ const features = [
     title: "Premium Materials",
     description:
       "Only the finest vinyl and chrome wraps from industry leaders",
-  },
-  {
-    icon: Shield,
-    title: "Paint Protection",
-    description:
-      "Preserve your vehicle's original paint while adding style",
   },
   {
     icon: Clock,

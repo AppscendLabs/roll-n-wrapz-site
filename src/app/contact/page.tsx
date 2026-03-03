@@ -208,9 +208,6 @@ export default function ContactPage() {
                   <option value="partial-wrap" className="bg-black">
                     Partial Wrap
                   </option>
-                  <option value="ppf" className="bg-black">
-                    Paint Protection Film
-                  </option>
                   <option value="chrome-delete" className="bg-black">
                     Chrome Delete
                   </option>

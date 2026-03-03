@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
-  Shield,
   Paintbrush,
   Palette,
   Wrench,
@@ -21,7 +20,7 @@ const services = [
     features: [
       "Custom color selection",
       "Matte, gloss, or satin finishes",
-      "Paint protection included",
+      "5-7 year durability",
       "5-7 year durability",
     ],
     price: "Starting at $2,999",
@@ -38,19 +37,6 @@ const services = [
       "Racing stripes",
     ],
     price: "Starting at $599",
-  },
-  {
-    icon: Shield,
-    title: "Paint Protection Film",
-    description:
-      "Invisible protection against chips, scratches, and environmental damage.",
-    features: [
-      "Self-healing technology",
-      "UV protection",
-      "Clear & invisible",
-      "10-year warranty",
-    ],
-    price: "Starting at $1,499",
   },
   {
     icon: Wrench,
