@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 import { X } from "lucide-react";
 
-type Category = "All" | "Chrome" | "Matte" | "Gloss" | "Custom";
+type Category = "All" | "Matte" | "Gloss" | "Custom";
 
 interface GalleryItem {
   id: number;
@@ -16,14 +16,6 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1641900409160-3d288c5a5805?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjB3cmFwJTIwY2hyb21lfGVufDF8fHx8MTc3MDk1NTM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Chrome Luxury Sedan",
-    category: "Chrome",
-    description: "Full chrome wrap with premium finish",
-  },
   {
     id: 2,
     image:
@@ -82,7 +74,7 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
-const categories: Category[] = ["All", "Chrome", "Matte", "Gloss", "Custom"];
+const categories: Category[] = ["All", "Matte", "Gloss", "Custom"];
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
