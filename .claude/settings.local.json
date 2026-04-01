@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(npx @anthropic-ai/skills add:*)",
+      "Bash(\"c:\\\\Users\\\\Tyler\\\\.local\\\\bin\\\\claude.exe\" skills add https://github.com/anthropics/skills --skill frontend-design)",
+      "Bash(\"c:\\\\Users\\\\Tyler\\\\.local\\\\bin\\\\claude.exe\" skills add:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(npx next build)"
+    ]
+  }
+}
