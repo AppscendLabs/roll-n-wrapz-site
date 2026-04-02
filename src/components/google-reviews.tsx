@@ -20,27 +20,6 @@ interface ReviewsData {
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/?q=place_id:ChIJ8xlFGoa-0ocRr6LpZesYi8A";
 
-const PLACEHOLDER_REVIEWS: Review[] = [
-  {
-    author_name: "James R.",
-    rating: 5,
-    text: "Roll N Wrapz did an incredible job on my truck. The matte black finish looks absolutely perfect — you can tell they take their time and do it right. Will be back for my next vehicle.",
-    relative_time_description: "2 weeks ago",
-  },
-  {
-    author_name: "Destiny M.",
-    rating: 5,
-    text: "I had a custom design done by their in-house designer and I couldn't be happier. The whole process was smooth and the final result was beyond what I imagined. Highly recommend!",
-    relative_time_description: "1 month ago",
-  },
-  {
-    author_name: "Carlos T.",
-    rating: 5,
-    text: "Best wrap shop in Arkansas. Got my company van wrapped for branding and the quality is outstanding. Tons of compliments already. Fast turnaround too — done in 2 days.",
-    relative_time_description: "3 weeks ago",
-  },
-];
-
 function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "lg" }) {
   const px = size === "lg" ? "w-7 h-7" : "w-4 h-4";
   return (
@@ -65,7 +44,7 @@ const GoogleIcon = () => (
 
 export function GoogleReviews() {
   const [data, setData] = useState<ReviewsData | null>(null);
-  const [usingPlaceholder, setUsingPlaceholder] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/reviews")
@@ -73,15 +52,16 @@ export function GoogleReviews() {
       .then((d) => {
         if (d.reviews && d.reviews.length > 0) {
           setData(d);
-        } else {
-          setUsingPlaceholder(true);
         }
       })
-      .catch(() => setUsingPlaceholder(true));
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
 
-  const reviews = data?.reviews.slice(0, 3) ?? (usingPlaceholder ? PLACEHOLDER_REVIEWS : null);
-  const overallRating = data?.rating ?? (usingPlaceholder ? 5.0 : null);
+  // Hide section entirely if no real reviews loaded
+  if (!loading && !data) return null;
+
+  const reviews = data?.reviews.slice(0, 3) ?? [];
 
   return (
     <section className="relative py-32 px-4 bg-black grain overflow-hidden">
@@ -96,8 +76,8 @@ export function GoogleReviews() {
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <StarRating rating={5} size="lg" />
-            {overallRating !== null && (
-              <span className="ml-1 text-white font-bold text-xl">{overallRating.toFixed(1)}</span>
+            {data?.rating && (
+              <span className="ml-1 text-white font-bold text-xl">{data.rating.toFixed(1)}</span>
             )}
           </div>
           <h2 className="font-display text-5xl md:text-6xl lg:text-8xl tracking-tight mb-4">
@@ -109,7 +89,7 @@ export function GoogleReviews() {
         </motion.div>
 
         {/* Loading skeleton */}
-        {!reviews && (
+        {loading && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[0, 1, 2].map((i) => (
               <div key={i} className="p-6 bg-white/[0.04] rounded-2xl border border-white/[0.08] animate-pulse">
@@ -125,8 +105,8 @@ export function GoogleReviews() {
           </div>
         )}
 
-        {/* Review cards */}
-        {reviews && (
+        {/* Real review cards */}
+        {!loading && reviews.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {reviews.map((review, index) => (
               <motion.div
