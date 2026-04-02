@@ -53,8 +53,6 @@ export default function ContactPage() {
 
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,29 +67,14 @@ export default function ContactPage() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError("");
-
-    const data = new FormData();
-    Object.entries(formData).forEach(([k, v]) => data.append(k, v));
-    files.forEach((f) => data.append("files", f));
-
-    try {
-      const res = await fetch("/api/contact", { method: "POST", body: data });
-      if (!res.ok) throw new Error("Failed to send");
-      setIsSubmitted(true);
-      setFiles([]);
-      setTimeout(() => {
-        setFormData({ name: "", email: "", phone: "", vehicle: "", service: "", message: "" });
-        setIsSubmitted(false);
-      }, 3000);
-    } catch {
-      setSubmitError("Something went wrong. Please try again or call us directly.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSubmitted(true);
+    setFiles([]);
+    setTimeout(() => {
+      setFormData({ name: "", email: "", phone: "", vehicle: "", service: "", message: "" });
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   const handleChange = (
@@ -308,20 +291,14 @@ export default function ContactPage() {
                 )}
               </div>
 
-              {submitError && (
-                <p className="text-red-400 text-sm">{submitError}</p>
-              )}
-
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                disabled={isSubmitted || isSubmitting}
+                disabled={isSubmitted}
                 className={`w-full py-4 rounded-full font-bold text-lg uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                   isSubmitted
                     ? "bg-green-600 cursor-not-allowed"
-                    : isSubmitting
-                    ? "bg-[#8dc63f]/60 cursor-not-allowed"
                     : "bg-[#8dc63f] hover:shadow-2xl hover:shadow-[#8dc63f]/50"
                 }`}
               >
@@ -329,8 +306,6 @@ export default function ContactPage() {
                   <>
                     <span>&#10003;</span> Message Sent!
                   </>
-                ) : isSubmitting ? (
-                  <>Sending...</>
                 ) : (
                   <>
                     Send Message <Send size={20} />
