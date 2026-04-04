@@ -30,10 +30,10 @@ const galleryProjects: GalleryProject[] = [
   },
   {
     id: 2,
-    images: ["/gallery/gmc-sierra-red.jpg"],
-    title: "GMC Sierra 1500 — Gloss Red",
-    category: "Gloss",
-    description: "Bold gloss red full wrap on a lifted GMC Sierra 1500",
+    images: ["/gallery/gmc-sierra-matte-pink.jpg"],
+    title: "GMC Sierra 1500 — Matte Pink",
+    category: "Matte",
+    description: "Full matte pink wrap on a lifted GMC Sierra 1500",
   },
 
   // ── Custom ─────────────────────────────────────────────────────────────────
