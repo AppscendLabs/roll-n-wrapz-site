@@ -1,11 +1,19 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { ArrowRight, Sparkles, Clock, Award } from "lucide-react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 import { GoogleReviews } from "@/components/google-reviews";
+
+const heroSlides = [
+  { src: "/gallery/tesla-cybertruck-matte.jpg", alt: "Tesla Cybertruck Matte Black Wrap", label: "Matte Wraps" },
+  { src: "/gallery/cadillac-ctsv-purple-1.jpg", alt: "Cadillac CTS-V Gloss Purple Wrap", label: "Gloss Wraps" },
+  { src: "/gallery/ed-edd-n-eddy-1.jpg", alt: "Ed Edd n Eddy Full Custom Graphic Wrap", label: "Custom Wraps" },
+  { src: "/gallery/lotto-truck-1.jpg", alt: "Arkansas Lottery Commercial Fleet Wrap", label: "Commercial Wraps" },
+  { src: "/gallery/ed-edd-n-eddy-1.jpg", alt: "Ed Edd n Eddy Full Custom Graphic Wrap", label: "Custom Graphics" },
+];
 
 const portfolioItems = [
   {
@@ -46,6 +54,7 @@ const features = [
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [slideIndex, setSlideIndex] = useState(0);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -55,19 +64,65 @@ export default function HomePage() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((i) => (i + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="bg-black">
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen overflow-hidden">
         <motion.div style={{ scale }} className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black z-10" />
-          <ImageWithFallback
-            src="/gallery/tesla-cybertruck-matte.jpg"
-            alt="Tesla Cybertruck Matte Black Wrap"
-            className="w-full h-full object-cover"
-            sizes="100vw"
-          />
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={slideIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <ImageWithFallback
+                src={heroSlides[slideIndex].src}
+                alt={heroSlides[slideIndex].alt}
+                className="w-full h-full object-cover"
+                sizes="100vw"
+              />
+            </motion.div>
+          </AnimatePresence>
         </motion.div>
+
+        {/* Slide label */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3">
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={slideIndex}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.4 }}
+              className="text-xs uppercase tracking-[0.2em] text-[#8dc63f] font-semibold"
+            >
+              {heroSlides[slideIndex].label}
+            </motion.span>
+          </AnimatePresence>
+          <div className="flex gap-2">
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`h-1 rounded-full transition-all duration-500 ${
+                  i === slideIndex ? "bg-[#8dc63f] w-8" : "bg-white/30 w-4 hover:bg-white/60"
+                }`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
 
         <motion.div
           style={{ opacity, y }}
