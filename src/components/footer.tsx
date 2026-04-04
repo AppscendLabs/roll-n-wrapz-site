@@ -100,17 +100,15 @@ export function Footer() {
             href="https://www.bbb.org/us/ar/north-little-rock/profile/vehicle-wrap/rolln-wrapz-llc-0935-90234378#bbbseal"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.04] hover:border-[#8dc63f]/40 hover:bg-white/[0.07] transition-all group"
             aria-label="BBB Accredited Business"
           >
-            {/* BBB Seal */}
-            <div className="w-12 h-12 rounded-full bg-[#003F87] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-lg shadow-[#003F87]/30">
-              <span className="text-white font-black text-lg leading-none">BBB</span>
-            </div>
-            <div className="text-left">
-              <p className="text-white text-xs font-bold uppercase tracking-wider leading-tight">BBB Accredited Business</p>
-              <p className="text-white/40 text-xs leading-tight">A+ Rating · Click to verify</p>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://m.bbb.org/brand/seals/Accredited_Business_Seal_NoRating_RGB.svg?tx=w_175"
+              alt="BBB Accredited Business"
+              className="h-10 w-auto"
+            />
           </a>
 
           <p className="text-white/40 text-sm text-center sm:text-right">
