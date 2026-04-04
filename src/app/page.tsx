@@ -12,7 +12,7 @@ const heroSlides = [
   { src: "/gallery/cadillac-ctsv-purple-1.jpg", alt: "Cadillac CTS-V Gloss Purple Wrap", label: "Gloss Wraps" },
   { src: "/gallery/ed-edd-n-eddy-1.jpg", alt: "Ed Edd n Eddy Full Custom Graphic Wrap", label: "Custom Wraps" },
   { src: "/gallery/lotto-truck-1.jpg", alt: "Arkansas Lottery Commercial Fleet Wrap", label: "Commercial Wraps" },
-  { src: "/gallery/ed-edd-n-eddy-1.jpg", alt: "Ed Edd n Eddy Full Custom Graphic Wrap", label: "Custom Graphics" },
+  { src: "/gallery/gmc-sierra-camo-1.jpg", alt: "GMC Sierra Camo Custom Wrap", label: "Custom Graphics" },
 ];
 
 const portfolioItems = [
