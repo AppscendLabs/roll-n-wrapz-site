@@ -62,8 +62,8 @@ export default function HomePage() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black z-10" />
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1699016144012-aea937145c85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMHdyYXBwZWQlMjB2ZWhpY2xlfGVufDF8fHx8MTc3MDk1NTM3N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Wrapped Vehicle"
+            src="/gallery/tesla-cybertruck-matte.jpg"
+            alt="Tesla Cybertruck Matte Black Wrap"
             className="w-full h-full object-cover"
             sizes="100vw"
           />
