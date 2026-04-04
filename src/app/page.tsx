@@ -9,22 +9,19 @@ import { GoogleReviews } from "@/components/google-reviews";
 
 const portfolioItems = [
   {
-    image:
-      "https://images.unsplash.com/photo-1760550517611-31732ef31135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB2aW55bCUyMHdyYXB8ZW58MXx8fHwxNzcwOTU1Mzc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Sport Performance",
-    category: "Vinyl Wrap",
+    image: "/gallery/cadillac-ctsv-purple-1.jpg",
+    title: "Cadillac CTS-V",
+    category: "Gloss Wrap",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1592713864248-fdef16231790?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXR0ZSUyMGJsYWNrJTIwd3JhcHBlZCUyMGNhcnxlbnwxfHx8fDE3NzA5NTUzNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Matte Black",
-    category: "Matte Finish",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1555534650-6bb24b6fc0e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXBlcmNhciUyMGV4b3RpYyUyMHdyYXB8ZW58MXx8fHwxNzcwOTU1Mzc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Exotic Elite",
+    image: "/gallery/infiniti-pink-black.jpg",
+    title: "Infiniti — Pink & Black",
     category: "Custom Design",
+  },
+  {
+    image: "/gallery/lotto-truck-1.jpg",
+    title: "Arkansas Lottery",
+    category: "Commercial Wrap",
   },
 ];
 

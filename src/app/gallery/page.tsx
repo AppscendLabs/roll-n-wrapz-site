@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 import { X } from "lucide-react";
 
-type Category = "All" | "Matte" | "Gloss" | "Custom";
+type Category = "All" | "Gloss" | "Custom" | "Commercial" | "Matte";
 
 interface GalleryItem {
   id: number;
@@ -17,64 +17,106 @@ interface GalleryItem {
 
 const galleryItems: GalleryItem[] = [
   {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1760550517611-31732ef31135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB2aW55bCUyMHdyYXB8ZW58MXx8fHwxNzcwOTU1Mzc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Sport Performance Wrap",
+    id: 1,
+    image: "/gallery/cadillac-ctsv-purple-1.jpg",
+    title: "Cadillac CTS-V",
     category: "Gloss",
-    description: "High-gloss vinyl with custom accents",
+    description: "Full gloss purple wrap on a Cadillac CTS-V",
+  },
+  {
+    id: 2,
+    image: "/gallery/cadillac-ctsv-purple-2.jpg",
+    title: "Cadillac CTS-V — Side Profile",
+    category: "Gloss",
+    description: "Full gloss purple wrap showcasing the side profile",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1592713864248-fdef16231790?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXR0ZSUyMGJsYWNrJTIwd3JhcHBlZCUyMGNhcnxlbnwxfHx8fDE3NzA5NTUzNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Matte Black Beast",
-    category: "Matte",
-    description: "Sleek matte black finish",
+    image: "/gallery/cadillac-ctsv-purple-3.jpg",
+    title: "Cadillac CTS-V — Golden Hour",
+    category: "Gloss",
+    description: "Gloss purple finish catching the golden hour light",
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1555534650-6bb24b6fc0e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXBlcmNhciUyMGV4b3RpYyUyMHdyYXB8ZW58MXx8fHwxNzcwOTU1Mzc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Exotic Supercar",
+    image: "/gallery/infiniti-pink-black.jpg",
+    title: "Infiniti — Pink & Black",
     category: "Custom",
-    description: "Custom color-shifting wrap",
+    description: "Two-tone pink and matte black custom split wrap",
   },
   {
     id: 5,
-    image:
-      "https://images.unsplash.com/photo-1699016144012-aea937145c85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMHdyYXBwZWQlMjB2ZWhpY2xlfGVufDF8fHx8MTc3MDk1NTM3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Vibrant Custom Design",
+    image: "/gallery/infiniti-chameleon.jpg",
+    title: "Infiniti Q50 — Color Shift",
     category: "Custom",
-    description: "Multi-color custom wrap design",
+    description: "Chameleon color-shift wrap with iridescent finish",
   },
   {
     id: 6,
-    image:
-      "https://images.unsplash.com/photo-1532793962127-d6735aba5cce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjB3cmFwcGVkJTIwc3BvcnRzJTIwY2FyfGVufDF8fHx8MTc3MDk1NTQ0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Racing Red",
-    category: "Gloss",
-    description: "High-impact gloss red finish",
+    image: "/gallery/slingshot-custom.jpg",
+    title: "Polaris Slingshot",
+    category: "Custom",
+    description: "Custom graphic wrap on a Polaris Slingshot",
   },
   {
     id: 7,
-    image:
-      "https://images.unsplash.com/photo-1735231830244-bed9285556c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwd3JhcHBlZCUyMGx1eHVyeSUyMHNlZGFufGVufDF8fHx8MTc3MDk1NTQ0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Luxury Blue",
-    category: "Matte",
-    description: "Matte blue with metallic accents",
+    image: "/gallery/motorcycle-gold.jpg",
+    title: "Sport Bike — Gold Wrap",
+    category: "Custom",
+    description: "Full gold vinyl wrap on a sport motorcycle",
   },
   {
     id: 8,
-    image:
-      "https://images.unsplash.com/photo-1707999494553-27506fa302a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5ZWxsb3clMjB3cmFwcGVkJTIwc3VwZXJjYXJ8ZW58MXx8fHwxNzcwOTU1NDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Yellow Thunder",
-    category: "Gloss",
-    description: "Bright yellow gloss finish",
+    image: "/gallery/motorcycle-chameleon.jpg",
+    title: "Sport Bike — Holographic",
+    category: "Custom",
+    description: "Holographic color-shift wrap on a sport bike",
+  },
+  {
+    id: 9,
+    image: "/gallery/lotto-truck-1.jpg",
+    title: "Arkansas Lottery Truck",
+    category: "Commercial",
+    description: "Full commercial wrap for the Arkansas Lottery",
+  },
+  {
+    id: 10,
+    image: "/gallery/lotto-truck-2.jpg",
+    title: "Arkansas Lottery — Side View",
+    category: "Commercial",
+    description: "Bold purple and orange branding wrap",
+  },
+  {
+    id: 11,
+    image: "/gallery/ford-mobile-service.jpg",
+    title: "Ford Transit — Mark McLarty Ford",
+    category: "Commercial",
+    description: "Full branded commercial wrap for a Ford dealership",
+  },
+  {
+    id: 12,
+    image: "/gallery/escalade-chrome-delete-1.jpg",
+    title: "Cadillac Escalade — Chrome Delete",
+    category: "Matte",
+    description: "Chrome delete with blacked-out trim and wheels",
+  },
+  {
+    id: 13,
+    image: "/gallery/escalade-chrome-delete-2.jpg",
+    title: "Cadillac Escalade — Side Profile",
+    category: "Matte",
+    description: "Clean matte finish with full chrome delete",
+  },
+  {
+    id: 14,
+    image: "/gallery/ram-rebel-partial.jpg",
+    title: "RAM Rebel — Partial Wrap",
+    category: "Matte",
+    description: "Matte black partial wrap on a RAM Rebel 4x4",
   },
 ];
 
-const categories: Category[] = ["All", "Matte", "Gloss", "Custom"];
+const categories: Category[] = ["All", "Gloss", "Custom", "Commercial", "Matte"];
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
