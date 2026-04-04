@@ -94,8 +94,28 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-          <p>&copy; {new Date().getFullYear()} ROLL&apos;N WRAPZ. All rights reserved.</p>
+        {/* BBB + Copyright bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a
+            href="https://www.bbb.org/us/ar/north-little-rock/profile/vehicle-wrap/rolln-wrapz-llc-0935-90234378#bbbseal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 group"
+            aria-label="BBB Accredited Business"
+          >
+            {/* BBB Seal */}
+            <div className="w-12 h-12 rounded-full bg-[#003F87] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-lg shadow-[#003F87]/30">
+              <span className="text-white font-black text-lg leading-none">BBB</span>
+            </div>
+            <div className="text-left">
+              <p className="text-white text-xs font-bold uppercase tracking-wider leading-tight">BBB Accredited Business</p>
+              <p className="text-white/40 text-xs leading-tight">A+ Rating · Click to verify</p>
+            </div>
+          </a>
+
+          <p className="text-white/40 text-sm text-center sm:text-right">
+            &copy; {new Date().getFullYear()} ROLL&apos;N WRAPZ. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
