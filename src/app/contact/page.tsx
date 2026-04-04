@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
+import { Paperclip, X as XIcon } from "lucide-react";
 import {
   Mail,
   Phone,
@@ -35,7 +36,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Hours",
-    content: "Mon-Fri: 8am-6pm, Sat: 9am-4pm",
+    content: "Mon–Fri: 8am–5pm",
     link: "#",
   },
 ];
@@ -50,20 +51,28 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [files, setFiles] = useState<File[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files);
+      setFiles((prev) => [...prev, ...newFiles].slice(0, 5));
+    }
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const removeFile = (index: number) => {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    setFiles([]);
     setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        vehicle: "",
-        service: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", phone: "", vehicle: "", service: "", message: "" });
       setIsSubmitted(false);
     }, 3000);
   };
@@ -170,7 +179,7 @@ export default function ContactPage() {
                   htmlFor="vehicle"
                   className="block text-sm font-medium text-white/80 mb-2"
                 >
-                  Vehicle Make & Model *
+                  Vehicle Year, Make & Model *
                 </label>
                 <input
                   type="text"
@@ -211,6 +220,18 @@ export default function ContactPage() {
                   <option value="chrome-delete" className="bg-black">
                     Chrome Delete
                   </option>
+                  <option value="commercial" className="bg-black">
+                    Commercial Wrap
+                  </option>
+                  <option value="residential" className="bg-black">
+                    Residential / Architectural
+                  </option>
+                  <option value="custom-design" className="bg-black">
+                    Custom Designed Wrap
+                  </option>
+                  <option value="window-perf" className="bg-black">
+                    Window Perforation
+                  </option>
                   <option value="other" className="bg-black">
                     Other / Not Sure
                   </option>
@@ -233,6 +254,41 @@ export default function ContactPage() {
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-[#8dc63f] focus:ring-1 focus:ring-[#8dc63f] transition-all resize-none"
                   placeholder="Tell us about your vision, preferred colors, timeline, etc."
                 />
+              </div>
+
+              {/* File Attachments */}
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-2">
+                  Attach Photos <span className="text-white/40">(optional, up to 5)</span>
+                </label>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full px-4 py-3 bg-white/5 border border-dashed border-white/20 rounded-lg text-white/60 hover:text-white hover:border-[#8dc63f]/50 transition-all flex items-center gap-3 text-sm"
+                >
+                  <Paperclip size={16} />
+                  <span>Click to attach images or PDFs</span>
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  multiple
+                  accept="image/*,.pdf"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+                {files.length > 0 && (
+                  <ul className="mt-3 space-y-2">
+                    {files.map((file, i) => (
+                      <li key={i} className="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/70">
+                        <span className="truncate">{file.name}</span>
+                        <button type="button" onClick={() => removeFile(i)} className="ml-3 text-white/40 hover:text-white flex-shrink-0">
+                          <XIcon size={14} />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <motion.button

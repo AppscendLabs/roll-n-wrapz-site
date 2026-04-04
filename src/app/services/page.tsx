@@ -9,6 +9,10 @@ import {
   Clock,
   CheckCircle2,
   ArrowRight,
+  Building2,
+  Home,
+  Pen,
+  Eye,
 } from "lucide-react";
 
 const services = [
@@ -21,9 +25,7 @@ const services = [
       "Custom color selection",
       "Matte, gloss, or satin finishes",
       "5-7 year durability",
-      "5-7 year durability",
     ],
-    price: "Starting at $2,999",
   },
   {
     icon: Paintbrush,
@@ -36,7 +38,6 @@ const services = [
       "Mirror caps",
       "Racing stripes",
     ],
-    price: "Starting at $599",
   },
   {
     icon: Wrench,
@@ -49,7 +50,54 @@ const services = [
       "Emblems & badges",
       "Grille accents",
     ],
-    price: "Starting at $399",
+  },
+  {
+    icon: Building2,
+    title: "Commercial Wraps",
+    description:
+      "Turn your fleet into moving billboards. We wrap company vehicles with precision branding that gets noticed.",
+    features: [
+      "Fleet vehicle wraps",
+      "Brand consistency",
+      "Fast turnaround",
+      "Nationwide brand materials",
+    ],
+  },
+  {
+    icon: Home,
+    title: "Residential & Architectural",
+    description:
+      "Beyond vehicles — we wrap storefronts, windows, and walls with custom graphics and films.",
+    features: [
+      "Storefront branding",
+      "Privacy window film",
+      "UV-blocking film",
+      "Wall & surface graphics",
+    ],
+  },
+  {
+    icon: Pen,
+    title: "Custom Designed Wraps",
+    description:
+      "Our in-house designer works directly with you to create a one-of-a-kind wrap from scratch.",
+    features: [
+      "In-shop designer on staff",
+      "Digital mockups",
+      "Unlimited revisions",
+      "Unique custom artwork",
+    ],
+  },
+  {
+    icon: Eye,
+    title: "Window Perforation",
+    description:
+      "See-through perforated vinyl for vehicle windows and storefronts — bold visuals outside, clear visibility inside.",
+    features: [
+      "One-way visibility",
+      "UV protection",
+      "Custom full-color print",
+      "Vehicle & storefront installs",
+    ],
   },
 ];
 
@@ -95,11 +143,6 @@ const finishes = [
     name: "Satin",
     description: "Perfect blend of gloss and matte",
     gradient: "from-[#8dc63f] to-[#6fb82f]",
-  },
-  {
-    name: "Chrome",
-    description: "Mirror-like reflective finish",
-    gradient: "from-gray-300 to-gray-400",
   },
   {
     name: "Carbon Fiber",
@@ -165,17 +208,14 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                <span className="text-lg font-bold text-[#8dc63f]">
-                  {service.price}
-                </span>
+              <div className="pt-6 border-t border-white/10">
                 <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="text-sm font-medium text-white/80 hover:text-white flex items-center gap-2 group/btn"
                   >
-                    Learn More
+                    Get a Quote
                     <ArrowRight
                       size={16}
                       className="group-hover/btn:translate-x-1 transition-transform"
@@ -186,6 +226,47 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Certifications Strip */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative rounded-2xl border border-white/10 bg-gradient-to-r from-white/[0.04] to-white/[0.02] px-8 py-10 text-center overflow-hidden"
+        >
+          <div className="absolute inset-0 pattern-lines pointer-events-none" />
+          <p className="text-white/50 text-xs uppercase tracking-[0.25em] mb-5 font-medium relative z-10">Certified Installers</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
+            <a
+              href="https://www.3m.com/3M/en_US/graphics-signage-us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#8dc63f]/50 hover:bg-white/10 transition-all group"
+            >
+              <span className="font-display text-3xl text-white tracking-tight group-hover:text-[#8dc63f] transition-colors">3M</span>
+              <div className="text-left">
+                <p className="text-white font-semibold text-sm">3M Certified</p>
+                <p className="text-white/40 text-xs">Graphics & Signage</p>
+              </div>
+            </a>
+            <div className="w-px h-10 bg-white/10 hidden sm:block" />
+            <a
+              href="https://graphics.averydennison.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#8dc63f]/50 hover:bg-white/10 transition-all group"
+            >
+              <span className="font-display text-2xl text-white tracking-tight group-hover:text-[#8dc63f] transition-colors">AD</span>
+              <div className="text-left">
+                <p className="text-white font-semibold text-sm">Avery Dennison Certified</p>
+                <p className="text-white/40 text-xs">MPI & Supreme Wrapping Films</p>
+              </div>
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* Finishes Section */}
