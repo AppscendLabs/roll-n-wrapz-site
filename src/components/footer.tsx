@@ -75,7 +75,7 @@ export function Footer() {
             <h3 className="text-white font-bold uppercase tracking-wider mb-4">
               Follow Us
             </h3>
-            <div className="flex justify-center md:justify-start gap-4 mb-8 md:mb-0">
+            <div className="flex justify-center md:justify-start gap-4 mb-6">
               {[
                 { icon: Instagram, label: "Instagram" },
                 { icon: Facebook, label: "Facebook" },
@@ -91,6 +91,20 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            <a
+              href="https://www.bbb.org/us/ar/north-little-rock/profile/vehicle-wrap/rolln-wrapz-llc-0935-90234378#bbbseal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/10 bg-white/[0.04] hover:border-[#8dc63f]/40 hover:bg-white/[0.07] transition-all"
+              aria-label="BBB Accredited Business"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://m.bbb.org/brand/seals/Accredited_Business_Seal_NoRating_RGB.svg?tx=w_175"
+                alt="BBB Accredited Business"
+                className="h-10 w-auto"
+              />
+            </a>
           </div>
         </div>
 

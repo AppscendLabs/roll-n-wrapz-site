@@ -280,6 +280,13 @@ const galleryProjects: GalleryProject[] = [
     category: "Commercial",
     description: "Full branded commercial wrap on a Toyota Corolla",
   },
+  {
+    id: 35,
+    images: ["/gallery/hummer-h2-miracle-motors.jpg"],
+    title: "Hummer H2 — Miracle Motors",
+    category: "Commercial",
+    description: "Custom wing graphic commercial wrap on a Hummer H2",
+  },
 
   // ── Matte ──────────────────────────────────────────────────────────────────
   {
