@@ -31,6 +31,11 @@ const portfolioItems = [
     title: "Arkansas Lottery",
     category: "Commercial Wrap",
   },
+  {
+    image: "/gallery/tesla-cybertruck-matte.jpg",
+    title: "Tesla Cybertruck",
+    category: "Matte Wrap",
+  },
 ];
 
 const features = [
