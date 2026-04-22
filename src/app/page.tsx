@@ -8,7 +8,7 @@ import { ImageWithFallback } from "@/components/image-with-fallback";
 import { GoogleReviews } from "@/components/google-reviews";
 
 const heroSlides = [
-  { src: "/gallery/tesla-cybertruck-matte.jpg", alt: "Tesla Cybertruck Matte Black Wrap", label: "Matte Wraps" },
+  { src: "/gallery/tesla-cybertruck-matte.jpg", alt: "Tesla Cybertruck Satin Black Wrap", label: "Satin Wraps" },
   { src: "/gallery/cadillac-ctsv-purple-1.jpg", alt: "Cadillac CTS-V Gloss Purple Wrap", label: "Gloss Wraps" },
   { src: "/gallery/ed-edd-n-eddy-1.jpg", alt: "Ed Edd n Eddy Full Custom Graphic Wrap", label: "Custom Wraps" },
   { src: "/gallery/lotto-truck-1.jpg", alt: "Arkansas Lottery Commercial Fleet Wrap", label: "Commercial Wraps" },
@@ -23,8 +23,8 @@ const portfolioItems = [
   },
   {
     image: "/gallery/infiniti-pink-black.jpg",
-    title: "Infiniti — Pink & Black",
-    category: "Custom Design",
+    title: "Infiniti — Color Change",
+    category: "Matte & Gloss Combo",
   },
   {
     image: "/gallery/lotto-truck-1.jpg",
@@ -34,7 +34,7 @@ const portfolioItems = [
   {
     image: "/gallery/tesla-cybertruck-matte.jpg",
     title: "Tesla Cybertruck",
-    category: "Matte Wrap",
+    category: "Satin Wrap",
   },
 ];
 
