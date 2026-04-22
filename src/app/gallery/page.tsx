@@ -301,7 +301,7 @@ const galleryProjects: GalleryProject[] = [
   {
     id: 36,
     images: ["/gallery/bass-boat-el-flaco.jpg"],
-    title: "Bass Boat — El Flaco",
+    title: "Bass Boat — Custom Wrap",
     category: "Custom",
     description: "Custom pink, grey & black graphic wrap on a bass boat",
   },
