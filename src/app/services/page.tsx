@@ -13,6 +13,7 @@ import {
   Home,
   Pen,
   Eye,
+  Printer,
 } from "lucide-react";
 
 const services = [
@@ -24,7 +25,7 @@ const services = [
     features: [
       "Custom color selection",
       "Matte, gloss, or satin finishes",
-      "5-7 year durability",
+      "3-5 year warranty",
     ],
   },
   {
@@ -97,6 +98,18 @@ const services = [
       "UV protection",
       "Custom full-color print",
       "Vehicle & storefront installs",
+    ],
+  },
+  {
+    icon: Printer,
+    title: "Wide Format Printing",
+    description:
+      "High-resolution large-format printing for banners, signs, wall graphics, and custom vehicle graphics — all produced in-house.",
+    features: [
+      "Banners & event signage",
+      "Wall & floor graphics",
+      "Backlit & outdoor displays",
+      "Custom vehicle graphic prints",
     ],
   },
 ];

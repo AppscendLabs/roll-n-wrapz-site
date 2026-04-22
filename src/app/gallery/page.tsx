@@ -108,9 +108,9 @@ const galleryProjects: GalleryProject[] = [
       "/gallery/silverado-hex-2.jpg",
       "/gallery/silverado-hex-3.jpg",
     ],
-    title: "Chevy Silverado — Hex Wrap",
+    title: "Chevy Silverado — Hex Stripe Kit",
     category: "Custom",
-    description: "Geometric hexagon pattern full wrap on a Chevy Silverado",
+    description: "Geometric hexagon stripe kit on a Chevy Silverado",
   },
   {
     id: 12,
@@ -126,9 +126,9 @@ const galleryProjects: GalleryProject[] = [
   {
     id: 13,
     images: ["/gallery/dodge-charger-skull.jpg"],
-    title: "Dodge Charger — Skull Graphic",
+    title: "Dodge Charger — Hellcat Decal",
     category: "Custom",
-    description: "Custom purple skull graphic wrap on a Dodge Charger",
+    description: "Custom Hellcat decal wrap on a Dodge Charger",
   },
   {
     id: 14,
@@ -215,9 +215,9 @@ const galleryProjects: GalleryProject[] = [
   {
     id: 22,
     images: ["/gallery/siemens-f150.jpg"],
-    title: "Siemens — Ford F-150",
+    title: "Powers — Ford F-150",
     category: "Commercial",
-    description: "Branded commercial wrap on a Ford F-150 for Siemens",
+    description: "Powers decals commercial wrap on a Ford F-150",
   },
   {
     id: 23,
@@ -287,6 +287,31 @@ const galleryProjects: GalleryProject[] = [
     category: "Commercial",
     description: "Custom wing graphic commercial wrap on a Hummer H2",
   },
+  {
+    id: 38,
+    images: [
+      "/gallery/warrior-precast-boat-1.jpg",
+      "/gallery/warrior-precast-boat-2.jpg",
+    ],
+    title: "Warrior Precast — Nitro Bass Boat",
+    category: "Commercial",
+    description: "Full branded commercial wrap on a Nitro bass boat for Warrior Precast",
+  },
+
+  {
+    id: 36,
+    images: ["/gallery/bass-boat-el-flaco.jpg"],
+    title: "Bass Boat — El Flaco",
+    category: "Custom",
+    description: "Custom pink, grey & black graphic wrap on a bass boat",
+  },
+  {
+    id: 37,
+    images: ["/gallery/embalming-machine-pink.jpg"],
+    title: "Embalming Machine — Custom Pink Wrap",
+    category: "Custom",
+    description: "Hot pink vinyl wrap with custom JL monogram on an embalming machine",
+  },
 
   // ── Matte ──────────────────────────────────────────────────────────────────
   {
@@ -295,9 +320,9 @@ const galleryProjects: GalleryProject[] = [
       "/gallery/escalade-chrome-delete-1.jpg",
       "/gallery/escalade-chrome-delete-2.jpg",
     ],
-    title: "Cadillac Escalade — Chrome Delete",
+    title: "Cadillac Escalade — Tuxedo Wrap",
     category: "Matte",
-    description: "Chrome delete with blacked-out trim and wheels",
+    description: "Tuxedo wrap with blacked-out trim and wheels on a Cadillac Escalade",
   },
   {
     id: 30,
@@ -315,9 +340,9 @@ const galleryProjects: GalleryProject[] = [
       "/gallery/ford-expedition-chrome-delete-4.jpg",
       "/gallery/ford-expedition-chrome-delete-5.jpg",
     ],
-    title: "Ford Expedition — Chrome Delete",
+    title: "Ford Expedition — Tuxedo Wrap",
     category: "Matte",
-    description: "Full chrome delete and matte accent wrap on a Ford Expedition",
+    description: "Tuxedo wrap with matte accents on a Ford Expedition",
   },
   {
     id: 32,
@@ -339,9 +364,9 @@ const galleryProjects: GalleryProject[] = [
   {
     id: 34,
     images: ["/gallery/tesla-cybertruck-matte.jpg"],
-    title: "Tesla Cybertruck — Matte Black",
+    title: "Tesla Cybertruck — Satin Black",
     category: "Matte",
-    description: "Matte black full wrap on a Tesla Cybertruck",
+    description: "Satin black full wrap on a Tesla Cybertruck",
   },
 ];
 
