@@ -310,7 +310,7 @@ const galleryProjects: GalleryProject[] = [
     images: ["/gallery/embalming-machine-pink.jpg"],
     title: "Embalming Machine — Custom Pink Wrap",
     category: "Custom",
-    description: "Hot pink vinyl wrap with custom JL monogram on an embalming machine",
+    description: "Hot pink vinyl wrap with custom YH monogram on an embalming machine",
   },
 
   // ── Matte ──────────────────────────────────────────────────────────────────
