@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -77,13 +77,15 @@ export function Footer() {
             </h3>
             <div className="flex justify-center md:justify-start gap-4 mb-6">
               {[
-                { icon: Instagram, label: "Instagram" },
-                { icon: Facebook, label: "Facebook" },
-                { icon: Twitter, label: "Twitter" },
-              ].map(({ icon: Icon, label }) => (
+                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/rolln_wrapz/" },
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/rollnwrapz" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/rollnwrapz/" },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#8dc63f] flex items-center justify-center transition-all touch-manipulation"
                   aria-label={label}
                 >
