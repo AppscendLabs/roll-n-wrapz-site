@@ -287,6 +287,31 @@ const galleryProjects: GalleryProject[] = [
     category: "Commercial",
     description: "Custom wing graphic commercial wrap on a Hummer H2",
   },
+  {
+    id: 38,
+    images: [
+      "/gallery/warrior-precast-boat-1.jpg",
+      "/gallery/warrior-precast-boat-2.jpg",
+    ],
+    title: "Warrior Precast — Nitro Bass Boat",
+    category: "Commercial",
+    description: "Full branded commercial wrap on a Nitro bass boat for Warrior Precast",
+  },
+
+  {
+    id: 36,
+    images: ["/gallery/bass-boat-el-flaco.jpg"],
+    title: "Bass Boat — El Flaco",
+    category: "Custom",
+    description: "Custom pink, grey & black graphic wrap on a bass boat",
+  },
+  {
+    id: 37,
+    images: ["/gallery/pink-toolbox-wrap.jpg"],
+    title: "Toolbox — Custom Pink Wrap",
+    category: "Custom",
+    description: "Hot pink vinyl wrap with custom JL monogram on a toolbox",
+  },
 
   // ── Matte ──────────────────────────────────────────────────────────────────
   {
