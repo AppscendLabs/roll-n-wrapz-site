@@ -118,7 +118,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-[#8dc63f] transition-colors"
           >
-            Built by AppscendLabs
+            Built by Appscend Labs
           </a>
         </div>
       </div>
