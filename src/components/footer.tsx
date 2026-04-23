@@ -110,8 +110,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-white/40 text-sm">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} ROLL&apos;N WRAPZ. All rights reserved.</p>
+          <a
+            href="https://www.appscendlabs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#8dc63f] transition-colors"
+          >
+            Built by AppscendLabs
+          </a>
         </div>
       </div>
     </footer>
