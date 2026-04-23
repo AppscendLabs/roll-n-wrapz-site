@@ -3,49 +3,56 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "@/components/image-with-fallback";
-import { Award, Wrench, Palette } from "lucide-react";
+import { Award, Wrench, Palette, Printer, Phone, Layers } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Marcus Rodriguez",
-    role: "Master Installer & Founder",
-    image:
-      "https://images.unsplash.com/photo-1578935570956-4326d9c62ebc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtZWNoYW5pYyUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MDk1NjQ4MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    bio: "With over 15 years of experience in vehicle wrapping, Marcus founded ROLL'N WRAPZ with a vision to bring premium wrapping services to the community. His attention to detail and perfectionist approach has earned him recognition across the industry. Marcus specializes in complex color-matching and intricate custom designs that push the boundaries of what's possible with vinyl.",
-    specialties: [
-      "Chrome Wraps",
-      "Color Matching",
-      "Custom Designs",
-      "Full Body Wraps",
-    ],
+    name: "Fred Falgout",
+    role: "Shop Manager",
+    image: "/team/fred-falgout.jpg",
+    bio: "With over 20 years of hands-on experience in the graphics and installation industry, Fred brings a wealth of knowledge, precision, and leadership to every project. Specializing in the installation of high-quality vinyl graphics, he has developed a strong reputation for delivering clean, accurate, and durable results across a wide range of applications—from vehicle wraps to large-scale signage. His extensive background allows him to efficiently oversee shop operations, manage production timelines, and ensure that every installation meets the highest standards of craftsmanship. Known for his attention to detail and problem-solving skills, he plays a key role in maintaining quality control while mentoring team members and supporting a collaborative work environment.",
+    specialties: ["Shop Management", "Vinyl Graphics", "Production Oversight", "Quality Control"],
     icon: Award,
   },
   {
-    name: "Sarah Chen",
-    role: "Lead Design Specialist",
-    image:
-      "https://images.unsplash.com/photo-1723099971299-3789db53604c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwdGVjaG5pY2lhbiUyMHdvcmtpbmd8ZW58MXx8fHwxNzcwOTMyMjgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    bio: "Sarah brings a unique blend of automotive knowledge and artistic vision to every project. Before joining ROLL'N WRAPZ, she worked in automotive design for major manufacturers. Her expertise in color theory and brand identity helps clients visualize their dream wrap before installation begins. She's passionate about creating designs that reflect each client's personality.",
-    specialties: [
-      "Design Consultation",
-      "Color Theory",
-      "Brand Identity",
-      "Digital Mockups",
-    ],
+    name: "Zach Patterson",
+    role: "Lead Vinyl Wrap Installer",
+    image: "/team/zach-patterson.jpg",
+    bio: "Zach is a Lead Vinyl Wrap Installer at Roll'n Wrapz with over six years of dedicated experience with the company. Throughout his time with the team, he has consistently demonstrated a high level of skill, precision, and craftsmanship across a wide range of projects. Zach specializes in color change wraps, commercial vehicle graphics, tuxedo wraps, and chrome deletes, bringing a detail-oriented approach to every installation. His ability to execute clean, seamless finishes while maintaining efficiency has made him a trusted leader within the shop. As a lead installer, Zach plays a key role in upholding quality standards, guiding team members, and ensuring each project meets client expectations.",
+    specialties: ["Color Change Wraps", "Commercial Graphics", "Tuxedo Wraps", "Chrome Deletes"],
+    icon: Wrench,
+  },
+  {
+    name: "Mike Hinshaw II",
+    role: "Print Production Specialist",
+    image: "/team/mike-hinshaw.jpg",
+    bio: "Mike Hinshaw II is our go-to guy for all questions regarding materials. He is responsible for the creation of signs and banners as well as all the graphics we install on vehicles. From the time our designer's job ends and our installers begin, is where you will find all of his responsibilities. Mike has grown up in print as his father, Mike Sr., is an over 30-year veteran pre-press production technician/designer that is still active in the area. Mike Jr. has a graphic design education background that complements his love for car customization — landing him doing what he loves with Roll'n Wrapz for almost 10 years now.",
+    specialties: ["Signs & Banners", "Vehicle Graphics", "Print Production", "Materials Expert"],
+    icon: Printer,
+  },
+  {
+    name: "Jenna Hickenbottom",
+    role: "Graphic Designer",
+    image: "/team/jenna-hickenbottom.jpg",
+    bio: "Jenna is a graphic designer at Roll'N Wrapz with over 8 years of experience, including the past 4 years with the company. She specializes in helping customers bring their ideas to life, whether that means creating a design from scratch or working with existing graphics. From eye-catching vehicle wraps to custom signage, Jenna enjoys turning concepts into something people can see and be proud of. Known for her friendly and laid-back approach, she makes the design process easy and collaborative, ensuring each client feels heard and confident in the final result. Jenna takes pride in delivering creative solutions that not only look great but also reflect each customer's unique vision.",
+    specialties: ["Vehicle Wrap Design", "Custom Signage", "Digital Mockups", "From-Scratch Design"],
     icon: Palette,
   },
   {
-    name: "Devon Mitchell",
-    role: "Senior Wrap Technician",
-    image:
-      "https://images.unsplash.com/photo-1770656505713-b0fd2f5751e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcGVjaWFsaXN0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MDk1NjQ4MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    bio: "Devon's precision and speed make him one of the most sought-after wrap technicians in the region. With 10+ years of hands-on experience, he's wrapped everything from everyday commuters to exotic supercars. His calm demeanor and methodical approach ensure every wrap is installed flawlessly. Devon is certified in multiple vinyl brands and stays current with the latest installation techniques.",
-    specialties: [
-      "Luxury Vehicles",
-      "Matte Finishes",
-      "Racing Stripes",
-    ],
-    icon: Wrench,
+    name: "Jaicee Whitmarsh",
+    role: "Customer Experience & Sales",
+    image: "/team/jaicee-whitmarsh.jpg",
+    bio: "When you reach out to Roll'n Wrapz, Jaicee is the voice on the phone, the name in your inbox, and the one who helps push your ideas into action. Whether that means answering your questions, gathering quote information, or making sure your vision — whether it's clean, crazy, or something completely out of the box — gets locked into an estimate ticket before passing it off to our designer to work her magic. From first call to final product, she keeps it rolling so your wrap gets from concept to reality without the chaos.",
+    specialties: ["Customer Experience", "Quote Management", "Project Coordination", "Client Relations"],
+    icon: Phone,
+  },
+  {
+    name: "Anias Rose Patterson",
+    role: "Shop Production & Office Administration",
+    image: "/team/anias-patterson.jpg",
+    bio: "Anias is a dynamic and highly versatile team member at Roll'n Wrapz, with over five years of experience supporting both shop production and front office operations. Whether she's working alongside the installation team in the shop with her husband, Zach, or assisting customers and managing administrative tasks up front for Roll'n Wrapz and its sister company, D&D Suncontrol, Anias plays a key role in keeping daily operations running smoothly. Known for her adaptability and hands-on approach, Anias has built a reputation for taking on projects that fall outside the \"normal\" scope of work — including embalming machines, airplanes, and caskets — projects that require precision, creativity, and a strong attention to detail.",
+    specialties: ["Shop Production", "Office Administration", "Unique Applications", "D&D Suncontrol"],
+    icon: Layers,
   },
 ];
 
@@ -92,29 +99,22 @@ export default function TeamPage() {
                   <ImageWithFallback
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
 
                   {/* Icon Badge */}
                   <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20">
                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#8dc63f] flex items-center justify-center shadow-lg shadow-[#8dc63f]/50">
-                      <member.icon
-                        size={28}
-                        className="text-black md:w-8 md:h-8"
-                      />
+                      <member.icon size={28} className="text-black md:w-8 md:h-8" />
                     </div>
                   </div>
 
                   {/* Name Badge */}
                   <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 z-20">
                     <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                      <h3 className="text-xl md:text-2xl font-display mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-[#8dc63f] font-medium text-sm md:text-base">
-                        {member.role}
-                      </p>
+                      <h3 className="text-xl md:text-2xl font-display mb-1">{member.name}</h3>
+                      <p className="text-[#8dc63f] font-medium text-sm md:text-base">{member.role}</p>
                     </div>
                   </div>
                 </div>
@@ -129,17 +129,11 @@ export default function TeamPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <div className="mb-6">
-                    <h3 className="text-3xl md:text-4xl font-display mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-xl text-[#8dc63f] font-medium">
-                      {member.role}
-                    </p>
+                    <h3 className="text-3xl md:text-4xl font-display mb-2">{member.name}</h3>
+                    <p className="text-xl text-[#8dc63f] font-medium">{member.role}</p>
                   </div>
 
-                  <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                    {member.bio}
-                  </p>
+                  <p className="text-white/70 text-lg mb-8 leading-relaxed">{member.bio}</p>
 
                   {/* Specialties */}
                   <div>
