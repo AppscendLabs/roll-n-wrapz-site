@@ -15,10 +15,27 @@ export function Footer() {
                 WRAPZ
               </span>
             </div>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/60 text-sm mb-6">
               Premium vehicle wrapping services that transform your ride into a
               masterpiece.
             </p>
+            <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">Sister Company</p>
+            <a
+              href="https://www.danddsuncontrol.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 group"
+              aria-label="D&D Suncontrol"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dandd-logo.png"
+                alt="D&D Suncontrol"
+                className="h-8 w-auto"
+                style={{ mixBlendMode: "screen" }}
+              />
+              <span className="text-white/50 text-sm font-medium group-hover:text-white transition-colors">D&amp;D Suncontrol</span>
+            </a>
           </div>
 
           <div>
@@ -118,7 +135,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-[#8dc63f] transition-colors"
           >
-            Built by AppscendLabs
+            Built by Appscend Labs
           </a>
         </div>
       </div>
