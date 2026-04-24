@@ -44,7 +44,6 @@ export function ImageWithFallback({
       fill={fill}
       sizes={sizes}
       onError={() => setDidError(true)}
-      unoptimized
     />
   );
 }
